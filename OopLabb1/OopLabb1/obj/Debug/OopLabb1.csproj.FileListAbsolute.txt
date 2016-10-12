@@ -9,3 +9,9 @@ C:\Users\Tommy\Documents\GitHub\OopLabb1\OopLabb1\obj\Debug\OopLabb1.pdb
 C:\Users\Tommy\Documents\GitHub\OopLabb1\OopLabb1\bin\Debug\OopLabb1.exe
 C:\Users\Tommy\Documents\GitHub\OopLabb1\OopLabb1\bin\Debug\OopLabb1.pdb
 C:\Users\Tommy\Documents\GitHub\OopLabb1\OopLabb1\obj\Debug\OopLabb1.csprojResolveAssemblyReference.cache
+C:\Users\Tommy\Documents\GitLabbar\OopLabb1\OopLabb1\bin\Debug\OopLabb1.exe.config
+C:\Users\Tommy\Documents\GitLabbar\OopLabb1\OopLabb1\obj\Debug\OopLabb1.exe
+C:\Users\Tommy\Documents\GitLabbar\OopLabb1\OopLabb1\obj\Debug\OopLabb1.pdb
+C:\Users\Tommy\Documents\GitLabbar\OopLabb1\OopLabb1\bin\Debug\OopLabb1.exe
+C:\Users\Tommy\Documents\GitLabbar\OopLabb1\OopLabb1\bin\Debug\OopLabb1.pdb
+C:\Users\Tommy\Documents\GitLabbar\OopLabb1\OopLabb1\obj\Debug\OopLabb1.csprojResolveAssemblyReference.cache

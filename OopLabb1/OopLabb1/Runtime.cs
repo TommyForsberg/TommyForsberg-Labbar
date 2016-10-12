@@ -16,7 +16,8 @@ namespace OopLabb1
             do
             {
                 Console.Clear();
-                Console.WriteLine("1. Add new. \n2. Remove.\n3. Show Info. \n4. EXIT. ");
+
+                Console.WriteLine("1. Add new \n2. Remove\n3. Show Info \n4. EXIT ");
                 var input = Console.ReadLine();
 
                 switch (input)
@@ -33,14 +34,18 @@ namespace OopLabb1
                         break;
 
                     case "2":
+                        Console.WriteLine("Vilken hund vill du ta bort?");
                         
+                        int chosenDog = int.Parse(Console.ReadLine());
+                        dogList.RemoveAt(chosenDog - 1);
                         break;
 
                     case "3":
+                        int index;
                         foreach (var Dog in dogList)
                         {
-                            Console.WriteLine(Dog.Name +" " + Dog.Age +" " + Dog.Breed);
-                            
+                            index = dogList.IndexOf(Dog) + 1;
+                            Console.WriteLine(index + " " + Dog.Name + "\t" + Dog.Age + "\t" + Dog.Breed);
                         }
                         Console.ReadLine();
                         break;
@@ -49,32 +54,10 @@ namespace OopLabb1
                         isProgramRunning = false;
                         break;
 
-                        //Dog newDog = new Dog
-                        //{
-                        //    Name = name,
-                        //    Age = age,
-                        //    Breed = breed
-                        //};
+                    default:
+                        break;
                 }
             } while (isProgramRunning);
-
-            
-            //{
-            //   new Dog
-            //    {
-            //        Name = "Hugo",
-            //        Age = 4,
-            //        Breed = "Tax"
-            //    },
-            //    new Dog
-            //    {
-            //        Name = "Leija",
-            //        Age = 5,
-            //        Breed = "Dobberman"
-            //    },
-            //};
-            
-            
         }
 
     
