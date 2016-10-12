@@ -10,13 +10,15 @@ namespace OopLabb1
     {
        public void Start()
         {
-            List<Dog> dogList = new List<Dog>();
-            
+            List<Dog> dogList = new List<Dog>()
+            {
+                new Dog { Name = "Milou", Age = 3, Breed = "Foxterrier" },
+                new Dog {Name = "Idefix", Age = 4, Breed = "West Highland"  },
+            };
             bool isProgramRunning = true; 
             do
             {
                 Console.Clear();
-
                 Console.WriteLine("1. Add new \n2. Remove\n3. Show Info \n4. EXIT ");
                 var input = Console.ReadLine();
 
@@ -34,8 +36,7 @@ namespace OopLabb1
                         break;
 
                     case "2":
-                        Console.WriteLine("Vilken hund vill du ta bort?");
-                        
+                        Console.WriteLine("What dog do you want to remove? Insert No.");
                         int chosenDog = int.Parse(Console.ReadLine());
                         dogList.RemoveAt(chosenDog - 1);
                         break;
@@ -45,7 +46,7 @@ namespace OopLabb1
                         foreach (var Dog in dogList)
                         {
                             index = dogList.IndexOf(Dog) + 1;
-                            Console.WriteLine(index + " " + Dog.Name + "\t" + Dog.Age + "\t" + Dog.Breed);
+                            Console.WriteLine("No " +index + ".\t" + Dog.Name + ", " + Dog.Age + " year(s), " + Dog.Breed +".");
                         }
                         Console.ReadLine();
                         break;
