@@ -43,11 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amphibia.cs" />
+    <Compile Include="AmphibiaManager.cs" />
+    <Compile Include="Animal.cs" />
+    <Compile Include="Cat.cs" />
+    <Compile Include="Crocodile.cs" />
+    <Compile Include="Frog.cs" />
+    <Compile Include="MammalManager.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="ReptileManager.cs" />
+    <Compile Include="Runtime.cs" />
+    <Compile Include="Snake.cs" />
+    <Compile Include="Monkey.cs" />
+    <Compile Include="Mammal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reptile.cs" />
+    <Compile Include="Toad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
