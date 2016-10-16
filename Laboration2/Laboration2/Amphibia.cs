@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Laboration2
 {
-     public class Amphibia : Animal
+      public class Amphibia : Animal
     {
         public string ColorOfSkin { get; set; }
         public bool CanSwim { get; set; } 

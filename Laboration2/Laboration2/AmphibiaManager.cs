@@ -8,8 +8,8 @@ namespace Laboration2
 {
     class AmphibiaManager
     {
-        public List<Frog> Frogs { get; set; }
-        public List<Toad> Toads { get; set; }
+        public static List<Frog> Frogs { get; set; }
+        public static List<Toad> Toads { get; set; }
 
 
         public AmphibiaManager()
@@ -36,18 +36,12 @@ namespace Laboration2
             newAmphibia.CanSwim = true;
             newAmphibia.HasGills = true;
             //Frog newFrog = (Frog)newAmphibia;
-            AddAnimal(newAmphibia);
+            AnimalManager animalManager = new AnimalManager();
+            animalManager.AddAnimal(newAmphibia);
             // Frog newFrog = new Frog();
             
         }
-        public void AddAnimal(Animal newAnimal) //börja med det specifika och skicka vidare ut i generella
-        {
-            Console.WriteLine("Habitat:");
-            newAnimal.Habitat = Console.ReadLine();
-            Console.WriteLine("YES");
-            Console.ReadKey();
-            AddToList(newAnimal);
-        }
+      
 
         public void AddFrog()
         {
@@ -55,6 +49,16 @@ namespace Laboration2
             Console.WriteLine("Pattern:");
             newFrog.Pattern = Console.ReadLine();
             AddAmphibia(newFrog);
+        }
+
+        public void AddToad()
+        {
+            Toad newToad = new Toad();
+            Console.WriteLine();
+            newToad.Metamorphosis = true;
+            Console.WriteLine("Walking Length:"); 
+            newToad.walkingLength = int.Parse(Console.ReadLine());
+            AddAmphibia(newToad);
         }
 
         public void ListFrogs()
@@ -68,14 +72,6 @@ namespace Laboration2
             Console.ReadLine();
         }
 
-        public void AddToList(Animal newAnimal)
-        {
-            if (newAnimal is Frog)
-            {
-                Frog newFrog = (Frog)newAnimal;
-                // AmphibiaManager amphibiaManager = new AmphibiaManager();
-                Frogs.Add(newFrog);
-            }
-        }
+       
     }
 }

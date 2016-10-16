@@ -8,7 +8,6 @@ namespace Laboration2
 {
     class Menu
     {
-
         public static void MainMenu()
         {
             Console.Clear();
@@ -31,6 +30,19 @@ namespace Laboration2
         {
             Console.Clear();
             Console.WriteLine("1. Frog");
+            Console.WriteLine("2. Toad");
+        }
+        public static void MammalMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("1. Monkey");
+            Console.WriteLine("2. Cat");
+        }
+        public static void ReptileMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("1. Crocodile");
+            Console.WriteLine("2. Snake");
         }
     }
 }

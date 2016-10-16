@@ -46,11 +46,13 @@
     <Compile Include="Amphibia.cs" />
     <Compile Include="AmphibiaManager.cs" />
     <Compile Include="Animal.cs" />
+    <Compile Include="AnimalManager.cs" />
     <Compile Include="Cat.cs" />
     <Compile Include="Crocodile.cs" />
     <Compile Include="Frog.cs" />
     <Compile Include="MammalManager.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="MenuMechanics.cs" />
     <Compile Include="ReptileManager.cs" />
     <Compile Include="Runtime.cs" />
     <Compile Include="Snake.cs" />
