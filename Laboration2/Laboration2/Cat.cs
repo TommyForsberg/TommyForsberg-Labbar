@@ -12,7 +12,7 @@ namespace Laboration2
 
         public override string Move()
         {
-            return String.Format("sneaks by when interrested. Otherwise the cat can stroll or rest.", base.Move());
+            return String.Format("{0}sneaks by when interrested. Otherwise the cat can stroll or rest.", base.Move());
         }
     }
 }

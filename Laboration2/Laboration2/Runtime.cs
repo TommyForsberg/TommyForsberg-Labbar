@@ -8,23 +8,21 @@ namespace Laboration2
 {
     class Runtime
     {
-        
 
-        //AmphibiaManager amphibiaManager = new AmphibiaManager();
-        //ReptileManager reptileManager = new ReptileManager();
-        //MammalManager mammalManager = new MammalManager();
+
+        public static bool IsProgramRunning { get; set; }
 
 
         public void Start()
         {
             
-            bool isProgramRunning = true;
+            IsProgramRunning = true;
             MenuMechanics menuMechanics = new MenuMechanics();
             do
             {
                 Menu.MainMenu();
                 menuMechanics.FirstMenuNavigation();
-            } while (isProgramRunning);
+            } while (IsProgramRunning);
         }
 
        

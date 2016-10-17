@@ -12,7 +12,7 @@ namespace Laboration2
 
         public override string Move()
         {
-            return String.Format("walks the walk. But doesn't talk the talk.", base.Move());
+            return String.Format("{0}walks the walk. But doesn't talk the talk.", base.Move());
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Laboration2
 
         public override string Move()
         {
-            return String.Format("swims under water. \nIf days are hot, it lures in the shadows. \nAlways waiting for its prey.",base.Move());
+            return String.Format("{0}swims under water. \nIf days are hot, it lures in the shadows. \nAlways waiting for its prey.",base.Move());
         }
     }
 }
