@@ -5,7 +5,9 @@ using System.Text;
 
 namespace Biljettbokning
 {
-    public class Concert : Event
+    public class Film : Event
     {
+        public string FilmTitle { get; set; }
+        public string Director { get; set; }
     }
 }

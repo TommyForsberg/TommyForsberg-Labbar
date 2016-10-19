@@ -5,11 +5,16 @@ using System.Text;
 
 namespace Biljettbokning
 {
-    public class Event
-
+    public class Person
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime DateOfEvent { get; set; }
+        public List<Event> MyEvents { get; set; }
+
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1}", FirstName, LastName);
+        }
     }
 }

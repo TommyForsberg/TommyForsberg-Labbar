@@ -43,17 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Event.cs" />
-    <Compile Include="Festival.cs" />
-    <Compile Include="Film.cs" />
-    <Compile Include="Concert.cs" />
+    <Compile Include="EventClasses\Event.cs" />
+    <Compile Include="EventHandler.cs" />
+    <Compile Include="EventClasses\Festival.cs" />
+    <Compile Include="EventClasses\Film.cs" />
+    <Compile Include="EventClasses\Concert.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

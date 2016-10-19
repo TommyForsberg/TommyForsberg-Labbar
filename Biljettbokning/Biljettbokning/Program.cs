@@ -10,6 +10,8 @@ namespace Biljettbokning
     {
         static void Main(string[] args)
         {
+            Runtime runTime = new Runtime();
+            runTime.Start();
         }
     }
 }

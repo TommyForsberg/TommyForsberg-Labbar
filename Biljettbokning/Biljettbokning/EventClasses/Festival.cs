@@ -7,5 +7,7 @@ namespace Biljettbokning
 {
     public class Festival : Event
     {
+        public string FestivalTitle { get; set; }
     }
+
 }
