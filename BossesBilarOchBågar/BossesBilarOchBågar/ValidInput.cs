@@ -21,7 +21,7 @@ namespace BossesBilarOchBågar
                 if (validInput)
                     return output;
                 else
-                    Console.WriteLine("Wrong input, try again.");
+                   Console.WriteLine("Wrong input, try again.");
             } while (true);
         }
     }

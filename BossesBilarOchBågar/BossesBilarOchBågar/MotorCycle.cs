@@ -10,7 +10,7 @@ namespace BossesBilarOchBågar
 
         public override string PrintVehicle()
         {
-            return string.Format(" {0}{1}", "Motorcycle", base.PrintVehicle()); 
+            return string.Format("{0,-10}{1}", "MC", base.PrintVehicle()); 
         }
     }
 }
