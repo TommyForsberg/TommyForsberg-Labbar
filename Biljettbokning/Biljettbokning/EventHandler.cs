@@ -83,7 +83,7 @@ namespace Biljettbokning
             }
             Console.WriteLine("Do you want to make a reservation? (Yes/No)");
             string input = Console.ReadLine().ToLower();
-            if (input == "yes")
+            if (input == "yes" || input =="y" )
             {
                 Console.WriteLine("What event do you wanna book? Input EventNo:");
                 int booking = int.Parse(Console.ReadLine());

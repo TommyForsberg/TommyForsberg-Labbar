@@ -11,6 +11,7 @@ namespace Biljettbokning
         public static string CurrentUser { get; set; }
         EventHandler eventHandler = new EventHandler();
         public bool IsProgramRunning { get; set; }
+
         public void Start()
         {
             Console.WriteLine("Event Booker 1.0");
@@ -29,8 +30,10 @@ namespace Biljettbokning
             Console.WriteLine("1. Show/Book Events");
             Console.WriteLine("2. Show my bookings");
             Console.WriteLine("3. Change current user");
-            int input = int.Parse(Console.ReadLine());
-
+            Console.WriteLine("4. Exit");
+            int input;
+            int.TryParse(Console.ReadLine(), out input);
+         
             switch(input)
             {
                 case 1:
@@ -40,6 +43,12 @@ namespace Biljettbokning
                 case 2: eventHandler.MyBookings();
                     break;
                 case 3: LoggOn();
+                    break;
+                case 4:IsProgramRunning = false;
+                    break;
+                default:
+                    Console.WriteLine("You have inserted {0}", input);
+                    Console.ReadKey();
                     break;
             }
         }
