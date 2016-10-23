@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BossesBilarOchBågar
 {
-    class VehicleHandler
+    class VehicleHandler //Most of the vital Code
     {
-        public static List<MotorCycle> MotorCycles { get; set; }
+        public  static List<MotorCycle> MotorCycles { get; set; } //Lists are static to no be rewritten upon new instances of vehiclehandler.
         public static List<Car> Cars { get; set; }
         
-         static VehicleHandler()
+         static VehicleHandler() //Constructor made static to be run only once.
         {
              Cars = new List<Car>
             {
@@ -21,8 +21,6 @@ namespace BossesBilarOchBågar
                 new Car {Brand ="Volvo", Model = "V70", Used = true, Color ="Red", Year = 2010, Price = 49000, StockCode ="C004"   },
                 new Car {Brand ="SAAB", Model = "740", Used = true, Color ="Green", Year = 1988, Price = 4800, StockCode ="C005"   },
                 new Car {Brand ="Mercedes", Model = "X230", Used = true, Color ="Silver", Year = 1999, Price = 16000, StockCode ="C006"   }
-
-
             };
 
             MotorCycles = new List<MotorCycle>
@@ -35,7 +33,7 @@ namespace BossesBilarOchBågar
             };
         }
 
-        public void VehicleListing(List<Vehicle> selectedVehicles)
+        public void VehicleListing(List<Vehicle> selectedVehicles) //Prints selected vehicles
         {
             foreach(var vehicle in selectedVehicles)
             {
@@ -43,18 +41,18 @@ namespace BossesBilarOchBågar
             }
         }
 
-        public void ScrapOrSellVehicle(string stockNumber, List<Vehicle> selectedStock)
+        public void ScrapOrSellVehicle(string stockNumber, List<Vehicle> selectedStock) //Removes object from stock/list
         {
-            Vehicle vehicleTobeSold = selectedStock.SingleOrDefault(vehicle => vehicle.StockCode == stockNumber);
-            if(vehicleTobeSold != null)
+            Vehicle vehicleTobeSold = selectedStock.SingleOrDefault(vehicle => vehicle.StockCode == stockNumber); //Selects vehicle by stock code/user input
+            if(vehicleTobeSold != null) //As long as the vehicle is in stock
             {
-                selectedStock.Remove(vehicleTobeSold);
+                selectedStock.Remove(vehicleTobeSold); //Removes "only for show" in temporary list to user
 
-                if (vehicleTobeSold is Car)
+                if (vehicleTobeSold is Car) //Removes Car from current stock list
                 {
                     Car newCar = (Car)vehicleTobeSold;
                     Cars.Remove(newCar); }
-                if(vehicleTobeSold is MotorCycle)
+                if(vehicleTobeSold is MotorCycle) //Removes Motorcycle from current stock list
                 {
                     MotorCycle newMotorCycle = (MotorCycle)vehicleTobeSold;
                     MotorCycles.Remove(newMotorCycle); }
@@ -64,20 +62,41 @@ namespace BossesBilarOchBågar
             { Console.WriteLine("Not Found"); }
         }
 
-        public void AddToStock()
+        public void AddToStock(Vehicle newVehicle) //Adds new vehicle
         {
-            int input = 1;
-            Vehicle newVehicle = new Car(); 
-           newVehicle.Model = Console.ReadLine();
+            Console.WriteLine("What is the brand?");
+            newVehicle.Brand = Console.ReadLine();
+            Console.WriteLine("What is the model?");
+            newVehicle.Model = Console.ReadLine();
+            Console.WriteLine("What is the color");
+            newVehicle.Color = Console.ReadLine();
+            Console.WriteLine("What is the year?");
+            newVehicle.Year = int.Parse(Console.ReadLine());
+            Console.WriteLine("What price?");
+            newVehicle.Price = int.Parse(Console.ReadLine());
+            Console.WriteLine("Is the vehicle new? (YES/NO)");
+            string newVehicleUsed = Console.ReadLine().ToUpper();
+            newVehicle.Used = newVehicleUsed == "YES" || newVehicleUsed == "Y" ? newVehicle.Used = false : newVehicle.Used = true;
+            
 
-            //if (input == 1)
-            //{
-            //   MotorCycle newVehicle = (MotorCycle)newVehicle;
-            //}
+           
+            if (newVehicle is Car)
+            {
+                var newCar = (Car)newVehicle;
+                newCar.StockCode = newCar.GenerateStockCode();
+                Cars.Add(newCar);
+            }
 
-            //MotorCycles.Add(newVehicle);
+            else
+            {
+                var newMotorcycle = (MotorCycle)newVehicle;
+                newMotorcycle.StockCode = newMotorcycle.GenerateStockCode();
+                MotorCycles.Add(newMotorcycle); }
+
+            Console.WriteLine("Succefully Added!");
+            Console.ReadKey(true);   
         }
-
+        
 
     }
 }

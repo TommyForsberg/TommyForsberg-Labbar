@@ -3,22 +3,22 @@
   <Class Name="BossesBilarOchBågar.Vehicle">
     <Position X="4.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAQAAAAAAAAAAAAAAAAAAAAAAAAgAgAABAEA=</HashCode>
-      <FileName>Vehicle.cs</FileName>
+      <HashCode>AAABAAAABQAAAAAAAAAAAAAAAAAAAAAAAAgAgAEBAEA=</HashCode>
+      <FileName>Vehicle Classes\Vehicle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BossesBilarOchBågar.Car">
     <Position X="2.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Car.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Vehicle Classes\Car.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BossesBilarOchBågar.MotorCycle">
     <Position X="6.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MotorCycle.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Vehicle Classes\MotorCycle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

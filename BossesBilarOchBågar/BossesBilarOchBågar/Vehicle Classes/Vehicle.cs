@@ -16,11 +16,9 @@ namespace BossesBilarOchBågar
         public int Year { get; set; }
         public string StockCode { get; set; }
 
-        public virtual string PrintVehicle()
+        public virtual string PrintVehicle() //Prints all vehicles in the same format
         {
             return String.Format("{0,-10}{1,-10}{2,-10}{3,-10}{4, -10}{5, -10}{6, -5}",StockCode, Brand, Model, Year, Color, Used == true ? "Used" : "New", Price);
         }
-        
-
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BossesBilarOchBågar
 {
-    class ValidInput
+    class ValidInput //Only purposed for error control
     {
 
         public static int ValidInteger()

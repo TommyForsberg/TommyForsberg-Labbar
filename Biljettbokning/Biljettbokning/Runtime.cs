@@ -31,9 +31,8 @@ namespace Biljettbokning
             Console.WriteLine("2. Show my bookings");
             Console.WriteLine("3. Change current user");
             Console.WriteLine("4. Exit");
-            int input;
-            int.TryParse(Console.ReadLine(), out input);
-         
+            int input = int.Parse(Console.ReadLine());
+
             switch(input)
             {
                 case 1:
@@ -51,10 +50,10 @@ namespace Biljettbokning
                     Console.ReadKey();
                     break;
             }
-        }
-        public void LoggOn()
+        } //Menu with choices
+        public void LoggOn() //Controlls if user is allready existing in list of bookings, else creates a new person object
         {
-            Person newPerson = new Person();
+            Person newPerson = new Person(); 
             Console.WriteLine("First name:");
             newPerson.FirstName = Console.ReadLine();
             Console.WriteLine("Last name:");
