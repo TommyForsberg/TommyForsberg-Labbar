@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Labb5_Interfaces
 {
-    class Client
+    class Client //Switches for maneuvering
     {
-       public void Start()
+       public void Start() 
         {
-            var filmsController = new FilmsController();
             do
             {
                 UI.PrintMainMenu();
@@ -18,22 +17,76 @@ namespace Labb5_Interfaces
                 switch (input)
                 {
                     case ConsoleKey.D1:
-                        filmsController.AddFilm();
+                        FilmChoice();
                         break;
-
                     case ConsoleKey.D2:
-                        filmsController.RemoveFilm();
-                        break;
-
-                    case ConsoleKey.D3:
-                        filmsController.PrintFilmList();
-                        break;
-
-                    case ConsoleKey.D4:
-                        filmsController.EditFilm();
+                        BookChoice();
                         break;
                 }
             } while (true);
+        }
+
+        public void FilmChoice()
+        {
+            bool run = true;
+            var filmsController = new FilmsController();
+            do
+            {
+                UI.PrintFilmMenu();
+                var input = Console.ReadKey(true).Key;
+                switch (input)
+                {
+                    case ConsoleKey.D1:
+                        filmsController.Add();
+                        break;
+
+                    case ConsoleKey.D2:
+                        filmsController.Remove();
+                        break;
+
+                    case ConsoleKey.D3:
+                        filmsController.PrintList();
+                        break;
+
+                    case ConsoleKey.D4:
+                        filmsController.Edit();
+                        break;
+
+                    case ConsoleKey.D5:
+                        run = false;
+                        break;
+                }
+            } while (run);
+        }
+
+        public void BookChoice()
+        {
+            var booksController = new BooksController();
+            bool run = true;
+            do
+            {
+                UI.PrintBookMenu();
+                var input = Console.ReadKey(true).Key;
+                switch(input)
+                {
+                    case ConsoleKey.D1:
+                        booksController.Add();
+                        break;
+
+                    case ConsoleKey.D2:
+                        booksController.Remove();
+                        break;
+                    case ConsoleKey.D3:
+                        booksController.PrintList();
+                        break;
+                    case ConsoleKey.D4:
+                        booksController.Edit();
+                        break;
+                    case ConsoleKey.D5:
+                        run = false;
+                        break;
+                }
+            } while (run);
         }
     }
 }

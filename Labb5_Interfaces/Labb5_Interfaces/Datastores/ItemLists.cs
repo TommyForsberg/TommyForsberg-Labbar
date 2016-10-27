@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Labb5_Interfaces
 {
-    public class ItemLists
+    public class ItemLists  //Holdingplace for lists of different objects
     {
         private static List<Film> films;
         private static List<Book> books;

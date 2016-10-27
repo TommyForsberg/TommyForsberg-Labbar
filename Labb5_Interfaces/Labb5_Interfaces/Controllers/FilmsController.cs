@@ -6,37 +6,37 @@ using System.Threading.Tasks;
 
 namespace Labb5_Interfaces
 {
-    class FilmsController
+    class FilmsController : IController
     {
         private IRepository repository = new FilmRepository();
 
-        public void AddFilm()
+        public void Add() //Film object is created here
         {
-            var newFilm = UI.AddFilm();
+            Film newFilm = new Film();
+            UI.AddItem(newFilm);
             repository.AddItem(newFilm);
         }
 
-        public void RemoveFilm()
+        public void Remove()
         {
             var films = repository.GetItems();
-            var selectedFilm = UI.SelectFilm(films) -1;
+            var selectedFilm = UI.SelectItem(films) -1;
             repository.RemoveItem(films[selectedFilm]);
         }
 
-        public void PrintFilmList()
+        public void PrintList()
         {
             Console.Clear();
-            UI.PrintFilms(repository.GetItems());
+            UI.PrintItems(repository.GetItems());
             Console.ReadKey(true);
         }
 
-        public void EditFilm()
+        public void Edit()
         {
             Console.Clear();
             var films = repository.GetItems();
-            var selectedFilm = UI.SelectFilm(films) -1;
-
-            UI.EditFilm(films[selectedFilm]);
+            var selectedFilm = UI.SelectItem(films) -1;
+            UI.EditItem(films[selectedFilm]);
         }
     }
 }

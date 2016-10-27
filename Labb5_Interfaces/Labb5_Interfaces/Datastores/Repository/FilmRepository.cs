@@ -5,10 +5,8 @@ using System.Text;
 
 namespace Labb5_Interfaces
 {
-    public class FilmRepository : IRepository
+    public class FilmRepository : IRepository //Communicates with the list of films
     {
-
-       
         public Item[] GetItems()
         {
             return ItemLists.Films.ToArray();
