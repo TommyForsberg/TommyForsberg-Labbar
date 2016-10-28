@@ -12,7 +12,7 @@ namespace Labb5_Interfaces
 
         public virtual string Properties()
         {
-            return String.Format("{0,-20}{1,-10}", Title, Year);
+            return String.Format("{0,-30}{1,-10}", Title, Year);
         }
 
     }

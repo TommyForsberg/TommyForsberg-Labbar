@@ -36,7 +36,7 @@ namespace Labb5_Interfaces
 
         public static void PrintHeader()
         {
-            Console.WriteLine("  " + "{0,-20}{1,-20}{2}","Director/Author","Title", "Year" );
+            Console.WriteLine("  " + "{0,-20}{1,-30}{2}" + Environment.NewLine,"Director/Author","Title", "Year" );
         }
 
         public static Item AddItem(Item newItem) //Receives any Item and takes input for various properties from user
