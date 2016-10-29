@@ -15,7 +15,7 @@ namespace Labb6_Console_Adventure
 
         public void Appearance()
         {
-            
+
             Console.WriteLine("The room was located at " + Location);
             //if(People != null)
             //{
