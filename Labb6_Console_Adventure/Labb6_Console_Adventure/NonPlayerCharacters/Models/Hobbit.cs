@@ -7,53 +7,23 @@ namespace Labb6_Console_Adventure
 {
     public class Hobbit : INonPlayerCharacter
     {
-        public string Name
+        public string  Name {get; set;}
+
+
+        public string Race { get; set; }
+       
+
+        public int TemperPoints { get; set; }
+    
+
+        public string Appearance(string location)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public string Race
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public int TemperPoints
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public void Appearance()
-        {
-            throw new NotImplementedException();
+            return string.Format("The hobbit looked greasy");
         }
 
         public void Presentation()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Hello, my name is " + Name);
         }
     }
 }

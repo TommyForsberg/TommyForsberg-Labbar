@@ -17,8 +17,11 @@ namespace Labb6_Console_Adventure
         public int TemperPoints { get; set; }
 
 
-        public void Appearance()
-        { }
+        public string Appearance(string location)
+        {
+
+            return ("Welcom");
+                }
 
         public void Presentation()
         {

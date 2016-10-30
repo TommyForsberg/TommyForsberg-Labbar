@@ -10,6 +10,7 @@ namespace Labb6_Console_Adventure
         string Location { get; set; }
         bool PeopleObserved { get; set; }
         List<INonPlayerCharacter> People { get; set; }
+        List<IInterestingObject> Furniture { get; set; }
 
     
         void Appearance();

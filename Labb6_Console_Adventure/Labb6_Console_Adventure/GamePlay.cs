@@ -8,69 +8,107 @@ namespace Labb6_Console_Adventure
 {
     class GamePlay
     {
+        bool isIntroductionToBeShown = true;
+        bool IsGameRunning { get; set; }
         GamesController gamesController = new GamesController();
         public void Start()
         {
-
-            UI.Header();
-            UI.Introduction();
-
+            IsGameRunning = true;
             do
             {
-                
                 InteractWithRoom();
-            } while (true);
+            } while (IsGameRunning);
         }
 
         public void InteractWithRoom()
         {
+            //Console.Clear();
+            UI.Header(gamesController.FetchCurrentRoom());
+            if(isIntroductionToBeShown ==true)
+                {
+                UI.Introduction();
+                isIntroductionToBeShown = false;
+            }
+            else
+            { UI.InitialRoomPresentation(gamesController.FetchCurrentRoom().Location); }
+            
             UI.PrintStandardChoices();
-            //var gamesController = new GamesController();
-            //int input = int.Parse(Console.ReadLine());
             int input = ValidInput.ValidInteger();
             
                 
                 switch (input)
                 {
                     case 1:
-                    UI.Header();
+                    UI.Header(gamesController.FetchCurrentRoom());
                     gamesController.LookAround();
+                    InteractWithSurroundings();
                         
                         break;
                     case 2:
-                    UI.Header();
+                    UI.Header(gamesController.FetchCurrentRoom());
                     gamesController.Travel();
                     break;
 
-                        case 3:UI.CurrentRoom.People[0].Presentation();
+                        case 3:
+                    UI.Header(gamesController.FetchCurrentRoom());
+                    gamesController.CheckInventory();
+                    InteractWithObject();
                     break;
 
                 case 4:
-                    UI.Header();
-                    if (UI.CurrentRoom.People == null /*|| UI.CurrentRoom.PeopleObserved == false*/)
-                    { Console.WriteLine("There was no one there but you.."); }
+                    IsGameRunning = false;
+                    break;
 
-                else
-                    {
-                        InteractWithCharacter();
-                    }
-                        break;
                 }
-            
+           
         }
 
-        public void InteractWithCharacter()
+        public void InteractWithSurroundings()
         {
-            
-            UI.PrintCharacters();
-            UI.PrintCharacterChoices();
-            int input = ValidInput.ValidInteger();
-            switch(input)
+           
+            bool run = true;
+            do
             {
-                case 1: 
-                    break;
-            }
-            
+                UI.PrintInDepthChoices();
+                int input = ValidInput.ValidInteger();
+                switch (input)
+                {
+                    case 1:
+                        UI.Header(gamesController.FetchCurrentRoom());
+                        gamesController.FetchCurrentRoom().People[0].Presentation();
+                        break;
+                    case 2:
+                        UI.Header(gamesController.FetchCurrentRoom());
+                        gamesController.ObserveCharacter();
+                        break;
+                            case 3:
+                        UI.Header(gamesController.FetchCurrentRoom());
+                        InteractWithObject();
+                        break;
+                    case 4: run = false;
+                        break;
+                }
+            } while (run);
+        }
+
+        public void InteractWithObject()
+        {
+            bool run = true;
+            do
+            {
+                UI.PrintInteractWithObjectsMenu();
+                int input = ValidInput.ValidInteger();
+                switch (input)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        UI.Header(gamesController.FetchCurrentRoom());
+                        gamesController.LookAround();
+                        run = false;
+                        break;
+                }
+            } while (run);
         }
     }
 }

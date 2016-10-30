@@ -11,6 +11,7 @@ namespace Labb6_Console_Adventure
         
 
         public List<INonPlayerCharacter> People { get; set; }
+        public List<IInterestingObject> Furniture { get; set; }
 
         public bool PeopleObserved { get; set; }
 

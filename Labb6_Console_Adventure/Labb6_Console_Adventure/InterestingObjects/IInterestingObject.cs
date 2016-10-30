@@ -7,10 +7,10 @@ namespace Labb6_Console_Adventure
 {
     public interface IInterestingObject
     {
-        bool Interactable { get; set; }
+        bool Interactable { get; }
         string Color { get; set; }
-        string Clue { get; set; }
-        void Appearance();
+        string Clue { get;}
+        string Appearance();
 
 
     }

@@ -13,7 +13,7 @@ namespace Labb6_Console_Adventure
 
 
         void Presentation();
-        void Appearance();
+        string Appearance(string location);
     }
 
 }

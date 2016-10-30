@@ -8,39 +8,54 @@ namespace Labb6_Console_Adventure
     public class Human : INonPlayerCharacter
     {
         public string Name { get; set; }
-  
         public string Race { get; set; }
         public string FacialHair { get; set; }
         public enum SkinType
         {
             Pale,
             Cold,
-            Raw
+            Raw,
+            flawless
         }
         public SkinType Skin
         {
-            get { return Skin; }
-            set { if (UI.CurrentRoom.Location == "Baker Street")
-                 Skin = 0;
-            } 
+            get; set;
         }
 
         public int TemperPoints { get; set; }
 
-
-        public void Appearance()
+        public Human(string location)
         {
-            string.Format("The human looked {0} as always in {1}",Skin,UI.CurrentRoom.Location);
+            if (location == "Mordor")
+            {
+                Skin = 0;
                 
-            
+                if (TemperPoints > 6)
+                {
+                    TemperPoints-=2;
+                }
+                
+            }
+            else
+            {
+                Skin = (SkinType)3;
+            }
         }
+
+        public string Appearance(string location)
+        {
+                return string.Format("The human looked {0} as always in {1}",
+                Skin, location);
+            }
+
+        
 
 
 
 
         public void Presentation()
         {
-            Console.WriteLine("Hello, my name is" + Name);
+            Console.WriteLine("Hello, my name is " + Name);
         }
     }
 }
