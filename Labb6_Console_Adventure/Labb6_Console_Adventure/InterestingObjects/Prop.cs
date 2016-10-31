@@ -11,7 +11,7 @@ namespace Labb6_Console_Adventure
         {
             get
             {
-                return String.Format("There was nothing interesting about it.");
+                return String.Format("Sadly, there was nothing interesting about it. Except it was..." + Color);
             }
 
         }
@@ -24,19 +24,9 @@ namespace Labb6_Console_Adventure
         }
         public PropType ObjectType { get; set; }
 
-
         public bool Interactable
         {
-            get
-            {
-                return Interactable;
-            }
-
-            set
-            {
-                Interactable = false;
-                
-            }
+            get; set;
         }
 
         public string Appearance()

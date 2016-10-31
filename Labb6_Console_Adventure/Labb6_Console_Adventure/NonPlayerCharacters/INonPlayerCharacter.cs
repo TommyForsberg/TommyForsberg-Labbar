@@ -9,9 +9,6 @@ namespace Labb6_Console_Adventure
     {
         int TemperPoints { get; set; }
         string Name { get; set; }
-        string Race { get; set; }
-
-
         void Presentation();
         string Appearance(string location);
     }

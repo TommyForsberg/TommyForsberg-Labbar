@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Environments\Models\Apartment.cs" />
     <Compile Include="Environments\IEnvironment.cs" />
-    <Compile Include="GamesController.cs" />
+    <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="GamePlay.cs" />
     <Compile Include="InterestingObjects\IInterestingObject.cs" />
     <Compile Include="InterestingObjects\KeyObject.cs" />
@@ -59,7 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStores\Repository.cs" />
     <Compile Include="UI.cs" />
-    <Compile Include="ValidInput.cs" />
+    <Compile Include="Misc\ValidInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

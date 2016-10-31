@@ -8,12 +8,9 @@ namespace Labb6_Console_Adventure
     public interface IEnvironment
     {
         string Location { get; set; }
-        bool PeopleObserved { get; set; }
+        string Name { get; set; }
         List<INonPlayerCharacter> People { get; set; }
         List<IInterestingObject> Furniture { get; set; }
-
-    
         void Appearance();
-
     }
 }

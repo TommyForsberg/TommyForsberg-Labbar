@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Labb6_Console_Adventure
 {
-    class GamePlay
+    class GamePlay //All different switches for user input
     {
+        public static bool isRingFound { get; set; }
         bool isIntroductionToBeShown = true;
         bool IsGameRunning { get; set; }
         GamesController gamesController = new GamesController();
         public void Start()
         {
+            isRingFound = false;
             IsGameRunning = true;
             do
             {
@@ -22,7 +24,6 @@ namespace Labb6_Console_Adventure
 
         public void InteractWithRoom()
         {
-            //Console.Clear();
             UI.Header(gamesController.FetchCurrentRoom());
             if(isIntroductionToBeShown ==true)
                 {
@@ -34,8 +35,6 @@ namespace Labb6_Console_Adventure
             
             UI.PrintStandardChoices();
             int input = ValidInput.ValidInteger();
-            
-                
                 switch (input)
                 {
                     case 1:
@@ -52,20 +51,17 @@ namespace Labb6_Console_Adventure
                         case 3:
                     UI.Header(gamesController.FetchCurrentRoom());
                     gamesController.CheckInventory();
-                    InteractWithObject();
+                    InteractWithInventory();
                     break;
 
                 case 4:
                     IsGameRunning = false;
                     break;
-
                 }
-           
         }
 
         public void InteractWithSurroundings()
         {
-           
             bool run = true;
             do
             {
@@ -75,22 +71,65 @@ namespace Labb6_Console_Adventure
                 {
                     case 1:
                         UI.Header(gamesController.FetchCurrentRoom());
-                        gamesController.FetchCurrentRoom().People[0].Presentation();
+                        int index = gamesController.ObserveCharacter();
+                        InteractWIthCharacter(index);
                         break;
                     case 2:
                         UI.Header(gamesController.FetchCurrentRoom());
-                        gamesController.ObserveCharacter();
+                        bool interact = gamesController.InteractWithObjects();
+                        if (interact)
+                        { InteractWithObject(); }
                         break;
                             case 3:
-                        UI.Header(gamesController.FetchCurrentRoom());
-                        InteractWithObject();
-                        break;
-                    case 4: run = false;
+                        run = false;
                         break;
                 }
             } while (run);
         }
 
+        public void InteractWIthCharacter(int index)
+        {
+            bool run = true;
+            do
+            {
+                UI.PrintInteractWithCharacterMenu();
+                int input = ValidInput.ValidInteger();
+                switch (input)
+                {
+                    case 1:
+                        gamesController.TalkToCharacter(index);
+                        break;
+                    case 2:
+                        UI.Header(gamesController.FetchCurrentRoom());
+                        gamesController.LookAround();
+                        run = false;
+                        break;
+                }
+            }
+            while (run);
+        }
+
+        public void InteractWithInventory()
+        {
+            bool run = true;
+            do
+            {
+                UI.PrintInteractWithObjectsMenu();
+                int input = ValidInput.ValidInteger();
+                switch (input)
+                {
+                    case 1:
+                        UI.Header(gamesController.FetchCurrentRoom());
+                        gamesController.ExamineObject(gamesController.FetchSherlocksInventory());
+                        break;
+                    case 2:
+                        UI.Header(gamesController.FetchCurrentRoom());
+                        gamesController.LookAround();
+                        run = false;
+                        break;
+                }
+            } while (run);
+        }
         public void InteractWithObject()
         {
             bool run = true;
@@ -101,6 +140,8 @@ namespace Labb6_Console_Adventure
                 switch (input)
                 {
                     case 1:
+                        UI.Header(gamesController.FetchCurrentRoom());
+                        gamesController.ExamineObject(gamesController.FetchCurrentRoom().Furniture.ToArray());
                         break;
                     case 2:
                         UI.Header(gamesController.FetchCurrentRoom());
@@ -110,5 +151,5 @@ namespace Labb6_Console_Adventure
                 }
             } while (run);
         }
-    }
+        }
 }

@@ -9,13 +9,8 @@ namespace Labb6_Console_Adventure
     {
         public string  Name {get; set;}
 
-
-        public string Race { get; set; }
-       
-
         public int TemperPoints { get; set; }
     
-
         public string Appearance(string location)
         {
             return string.Format("The hobbit looked greasy");

@@ -8,7 +8,6 @@ namespace Labb6_Console_Adventure
 {
     class UI
     {
-       //public static IEnvironment CurrentRoom { get; set; }
         public static void Introduction()
         {
             Console.WriteLine("Hi, your name is Sherlock Holmes. You have been sent \nto another dimension to find a certain ring...");
@@ -26,10 +25,9 @@ namespace Labb6_Console_Adventure
         public static void PrintInDepthChoices()
         {
             Console.WriteLine(Environment.NewLine);
-            Console.WriteLine("1. Talk to person");
-            Console.WriteLine("2. Look at person");
-            Console.WriteLine("3. Interact with object");
-            Console.WriteLine("4. Return");
+            Console.WriteLine("1. Interact with person");
+            Console.WriteLine("2. Interact with object");
+            Console.WriteLine("3. Return");
         }
 
         public static void Header(IEnvironment CurrentRoom)
@@ -40,6 +38,7 @@ namespace Labb6_Console_Adventure
 
         public static int SetCurrentRoom()
         {
+            Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Where do you want to go Sherlock?");
             return int.Parse(Console.ReadLine());
         }
@@ -49,7 +48,7 @@ namespace Labb6_Console_Adventure
             int index = 1;
             foreach(var location in locations)
             {
-                Console.WriteLine(index + " " + location.Location);
+                Console.WriteLine(index + ". " +location.Name +", " +location.Location);
                 index++;
             }
         } 
@@ -58,7 +57,7 @@ namespace Labb6_Console_Adventure
             int index = 1;
             foreach(var person in currentRoom.People)
             {
-                Console.WriteLine(index + ". A " + person.GetType().Name + " was standing in the corner");
+                Console.WriteLine(index + ". A " + person.GetType().Name);
                 index++;
             }
         }
@@ -70,59 +69,72 @@ namespace Labb6_Console_Adventure
             }
             else if (currentRoom.People.Count == 1)
             {
-                Console.WriteLine("a person stood alone in the room with you.");
+                Console.WriteLine("a person stood alone in the " + currentRoom.GetType().Name +" with you.");
             }
             else if (currentRoom.People.Count > 2)
             {
-                Console.WriteLine("The room was crowded.");
+                Console.WriteLine("The "+ currentRoom.GetType().Name + " was crowded." );
             }
         }
 
         public static void PrintInitialFurnituringStatus(IEnvironment currentRoom)
         {
-            if (currentRoom.Furniture == null)
+            if (currentRoom.Furniture.Count < 1)
             {
                 Console.WriteLine("The furniture wasn't exciting..");
             }
             else
             {
-                Console.WriteLine("It looked like the inventories might hold some secrets.");
+                Console.WriteLine("It looked like the surroundings might hold some secrets.");
             }
         }
 
         public static int ChooseNumberForInteraction()
         {
+            Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Pick the corresponding number:");
             return ValidInput.ValidInteger();
         }
         public static void InitialRoomPresentation(string currentLocation)
         {
-            Console.WriteLine("Welcome to " + currentLocation);
+            Console.WriteLine("Welcome to " + currentLocation+".");
+
+            if (GamePlay.isRingFound == true && currentLocation == "Baker Street")
+            {
+
+                Console.WriteLine("You investigated the ring in a microscope. Clearly You had found it!");
+                Console.WriteLine("YOU WON THE GAME!");
+            }
         }
 
         public static void PrintObjects(IInterestingObject[] objects)
         {
-            
-            int index = 1;
-            foreach(var thing in objects)
-            {
-                Console.WriteLine(index + ". A " + thing.Appearance());
-                index++;
-            }
-            Console.WriteLine();
+                int index = 1;
+                foreach (var thing in objects)
+                {
+                    Console.WriteLine(index + ". A " + thing.Appearance());
+                    index++;
+                }
         }
         public static void PrintInventory(IInterestingObject[] objects)
         {
-            Console.WriteLine("You're inventory included:");
+            Console.WriteLine("Your inventory included:");
             Console.WriteLine();
             PrintObjects(objects);
         }
 
         public static void PrintInteractWithObjectsMenu()
         {
+            Console.WriteLine(Environment.NewLine);
             Console.WriteLine("1. Examine");
             Console.WriteLine("2. Return");
         }
 
+        public static void PrintInteractWithCharacterMenu()
+        {
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("1. Talk to");
+            Console.WriteLine("2. Return");
+        }
     }
 }
