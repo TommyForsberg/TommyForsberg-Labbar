@@ -13,5 +13,6 @@ namespace Labb7_StoreApp
         {
             get; set;
         }
+        public int Quantity { get; set; }
     }
 }

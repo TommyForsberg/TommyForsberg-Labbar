@@ -9,6 +9,7 @@ namespace Labb7_StoreApp
     {
         int Price { get; set; }
         string ProductType { get; set; }
+        int Quantity { get; set; }
 
     }
 }
