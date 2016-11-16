@@ -4,12 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labb9TicTacToe
+namespace Labb13EventsOchDelegater
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-        }
-    }
+    delegate void WrongInputEventHandler(string input);
 }

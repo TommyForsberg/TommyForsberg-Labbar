@@ -8,6 +8,7 @@ namespace Labb11_Events
 {
     class Runtime
     {
+
         public delegate void AnalyzeNumber(int number);
         private event AnalyzeNumber NumberInput;
         public void Start()
