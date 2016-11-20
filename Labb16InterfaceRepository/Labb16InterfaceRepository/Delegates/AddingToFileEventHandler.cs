@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labb13EventsOchDelegater
+namespace Labb16InterfaceRepository
 {
-    delegate bool FilteringOptions(Film film);
-    
+    public delegate void AddingToFileEventHandler(object source, EventArgs args);
 }

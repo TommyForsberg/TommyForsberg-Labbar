@@ -51,11 +51,12 @@ namespace Labb13EventsOchDelegater
 
         public void FilterFilms()
         {
-            FilteringOptions filterDrama = FilterMethods.FilterMinutes;
+            Func<Film,bool> filterDrama = FilterMethods.FilterMinutes;
 
             switch (UI.FilterMenu())
             {
-                case ConsoleKey.D1:lists.PrintFilms(filterDrama);
+                case ConsoleKey.D1:
+                    lists.PrintFilms(filterDrama);
                     break;
                 case ConsoleKey.D2: lists.PrintFilms(film => film.Length > 90);
                     break;

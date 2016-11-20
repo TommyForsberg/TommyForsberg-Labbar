@@ -4,8 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labb13EventsOchDelegater
+namespace Labb15Interface
 {
-    delegate bool FilteringOptions(Film film);
-    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        }
+    }
 }

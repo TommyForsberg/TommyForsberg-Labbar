@@ -26,7 +26,8 @@ namespace Labb13EventsOchDelegater
             };
         }
 
-        public void PrintFilms(FilteringOptions filter)
+      // public void PrintFilms(FilteringOptions filter)
+            public void PrintFilms(Func<Film,bool> filter)
         {
             Console.Clear();
             foreach(var film in Films)

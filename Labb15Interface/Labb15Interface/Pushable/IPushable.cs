@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labb13EventsOchDelegater
+namespace Labb15Interface
 {
-    delegate bool FilteringOptions(Film film);
-    
+    interface IPushable
+    {
+        void Push();
+    }
 }
