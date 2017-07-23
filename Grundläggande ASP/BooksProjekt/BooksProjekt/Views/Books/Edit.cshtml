@@ -1,0 +1,17 @@
+﻿@model CreateBookVM
+
+<form asp-controller="Books" asp-action="Edit" method="post">
+    <label asp-for="Title"></label>
+    <input asp-for="Title" />
+    <span asp-validation-for="Title"></span>
+    <br />
+    <label asp-for="Author"></label>
+    <input asp-for="Author" />
+    <span asp-validation-for="Author"></span>
+    <br />
+    <label asp-for="Pages"></label>
+    <input asp-for="Pages" />
+    <span asp-validation-for="Pages"></span>
+    <br />
+    <input type="submit" value="Edit Book" />
+</form>

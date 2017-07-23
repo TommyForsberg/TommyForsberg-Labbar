@@ -1,0 +1,11 @@
+﻿@model CatsIndexVM[]
+<h1>Cats</h1>
+@foreach(var item in Model)
+{
+    @item.Name
+    if(item.IsAggressive)
+    {
+        <b>Aggressive!</b>    
+    }
+    <br />
+}

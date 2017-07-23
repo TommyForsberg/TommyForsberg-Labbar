@@ -1,0 +1,13 @@
+﻿@model ListBooksVM[]
+@{
+    ViewBag.Title = "List All Books";
+}
+@foreach (ListBooksVM book in Model)
+{
+   @book.Title<a asp-controller="Books" asp-action="Edit" asp-route-id="@book.Id"> Edit </a>
+    @if(book.IsAClassic)
+    {
+     <b> This is a classic</b>
+    }
+    <br />
+}

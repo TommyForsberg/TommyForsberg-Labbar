@@ -1,0 +1,22 @@
+﻿@model CockiesLabb.Models.UserLoginVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Logg on page</title>
+</head>
+<body>
+    <h1>Logon Page</h1>
+    <form asp-controller="Home" asp-action="Index">
+        <label asp-for="@Model.UserName">
+            </label><input asp-for="@Model.UserName" />
+        <br />
+        <label asp-for="@Model.Password">
+        </label><input asp-for="@Model.Password" />
+        <input asp-for="@Model.AcceptCookies" /><label asp-for="@Model.AcceptCookies"></label>
+        <br />
+        <input type="submit" value="Login"/>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿@model CreateCatVM
+@{
+    ViewBag.Title = "Create Cat";
+}
+
+<form asp-controller="Cat" asp-action="Create" method="post">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <br />
+    <label asp-for="Anger"></label>
+    <input asp-for="Anger" />
+    <span asp-validation-for="Anger"></span>
+    <br />
+    <label asp-for="Weight"></label>
+    <input asp-for="Weight" />
+    <span asp-validation-for="Weight"></span>
+    <input type="submit" value="Add cat" />
+</form>

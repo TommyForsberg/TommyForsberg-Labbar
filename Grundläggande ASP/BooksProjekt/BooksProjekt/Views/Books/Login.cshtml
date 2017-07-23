@@ -1,0 +1,20 @@
+﻿@model LoginVM
+
+@{
+    ViewBag.Title = "Login Page";
+}
+<form asp-controller="Books" asp-action="Login" method="post">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <br />
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
+    <span asp-validation-for="Password"></span>
+    <br />
+    <label asp-for="AcceptedTerms"></label>
+    <input asp-for="AcceptedTerms" />
+    <span asp-validation-for="AcceptedTerms"></span>
+    <br />
+    <input type="submit" value="Login" />
+</form>
